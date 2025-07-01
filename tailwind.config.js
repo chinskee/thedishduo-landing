@@ -9,10 +9,14 @@ module.exports = {
         '2xl': '2rem',      // 32px for large headings
       },
       colors: {
-        primary: '#6C5CE7', // your main brand blue
-        accent: '#00B894',  // secondary accent green
-        neutralLight: '#F7F9FB',
-        neutralDark: '#2D3436',
+        primary: '#5C4DFF',        // matches app primary
+        accent: '#4AC7FA',         // matches app accent
+        background: '#F6F7FB',     // app background
+        surface: '#FFFFFF',        // app surface
+        textMain: '#232347',       // app main text
+        textSecondary: '#5B5B7A',  // app secondary text
+        chipSelected: '#E3D9FF',   // app selected chip
+        chipBg: '#F1F1F6',         // app chip background
       },
       borderRadius: {
         xl: '16px',         // larger card rounding

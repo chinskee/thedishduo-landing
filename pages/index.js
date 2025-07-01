@@ -1,242 +1,155 @@
+import Head from 'next/head'
 import Link from 'next/link'
 
 export default function Home() {
   return (
-    <div className="min-h-screen overflow-x-hidden bg-white text-gray-900 w-full max-w-full">
-      {/* Navigation */}
-      <nav className="flex items-center justify-between px-6 py-4 border-b border-gray-200">
-        <div className="text-2xl font-bold text-indigo-600">DishDuo</div>
-        <div className="space-x-4">
-          <Link href="/signup" className="text-indigo-600 font-semibold hover:underline">Sign Up</Link>
-          <Link href="/app" className="text-gray-700 font-semibold hover:underline">App</Link>
-        </div>
-      </nav>
+    <>
+      <Head>
+        <title>DishDuo – Swipe, Save & Savor Together</title>
+        <meta name="description" content="Swipe recipes with your partner, save favorites, and get automatic grocery lists—DishDuo makes meal planning fun." />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
 
-      {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center px-6 md:px-12 text-center bg-indigo-50 min-h-screen">
-        <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-indigo-700">
-          Simplify Mealtime Decisions Instantly
-        </h1>
-        <p className="text-lg md:text-xl mb-8 max-w-3xl text-indigo-600">
-          Get AI-powered recipe ideas, meal plans, and grocery lists based on what you already have.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
-          <Link href="/signup" className="bg-indigo-700 text-white px-8 py-3 rounded-lg w-full sm:w-auto hover:bg-indigo-800 transition">
-            Get Started
-          </Link>
-          <Link href="/app" className="border border-indigo-700 text-indigo-700 px-8 py-3 rounded-lg w-full sm:w-auto hover:bg-indigo-100 transition">
-            Try Demo
-          </Link>
-        </div>
-        <div className="mt-12 w-full max-w-4xl aspect-video bg-black rounded-lg overflow-hidden shadow-lg">
-          <video
-            src="/media/dishduo-demo.mp4"
-            controls
-            className="w-full h-full object-cover"
-            poster="/media/dishduo-demo-poster.jpg"
-          >
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </section>
+      <div className="bg-gradient-to-br from-primary to-purple-600 text-white flex flex-col">
+        {/* Navigation */}
+        <nav className="container mx-auto flex justify-between items-center py-6">
+          <div className="flex items-center space-x-2">
+            <img src="/assets/logo.png" alt="DishDuo logo" className="h-12 w-auto" />
+            <span className="text-2xl font-bold text-white">DishDuo</span>
+          </div>
+          <div className="space-x-4">
+            <a
+              href="#demo"
+              className="inline-block px-4 py-2 rounded-full bg-white/20 text-white font-medium hover:bg-white/40 transition"
+            >
+              Demo
+            </a>
+            <Link
+              href="/signup"
+              className="inline-block px-4 py-2 rounded-full bg-white/20 text-white font-medium hover:bg-white/40 transition"
+            >
+              Waitlist
+            </Link>
+          </div>
+        </nav>
 
-      {/* Problem Section */}
-      <section className="py-20 px-6 md:px-12 bg-white text-center max-w-5xl mx-auto">
-        <h2 className="text-3xl font-bold mb-6 text-gray-900">Why is meal planning so hard?</h2>
-        <p className="text-gray-700 text-lg max-w-3xl mx-auto">
-          Endless debates about what to eat, last-minute grocery runs, and wasted ingredients. Meal planning shouldn't be a chore.
-        </p>
-      </section>
-
-      {/* Solution Section */}
-      <section className="py-20 px-6 md:px-12 bg-indigo-50 text-center max-w-5xl mx-auto">
-        <h2 className="text-3xl font-bold mb-6 text-indigo-700">DishDuo makes meal planning effortless</h2>
-        <p className="text-indigo-600 text-lg max-w-3xl mx-auto mb-12">
-          Swipe through AI-curated recipes with your partner, save your favorites, and get an automatic shopping list tailored to your tastes.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-4xl mx-auto">
-          <div>
-            <h3 className="font-semibold text-xl mb-2 text-indigo-800">Swipe to Plan</h3>
-            <p className="text-indigo-700">A fun, collaborative interface that makes meal planning a breeze.</p>
+        {/* Hero */}
+        <header className="container mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center py-20" style={{minHeight: '100vh'}}>
+          <div className="md:w-1/2 text-center md:text-left">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-6">
+              Swipe, Save, and Savor<br/>Recipes Together
+            </h1>
+            <p className="text-lg sm:text-xl mb-8">
+              AI-powered meal planning that’s fun and collaborative—just like Tinder, but for recipes.
+            </p>
+            <div className="flex flex-col sm:flex-row sm:space-x-4 gap-4 justify-center md:justify-start items-center">
+              <a
+                href="https://apps.apple.com/"
+                className="inline-flex bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
+              >
+                App Store
+              </a>
+              <a
+                href="https://play.google.com/"
+                className="inline-flex bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
+              >
+                Google Play
+              </a>
+            </div>
           </div>
-          <div>
-            <h3 className="font-semibold text-xl mb-2 text-indigo-800">Save Favorites</h3>
-            <p className="text-indigo-700">Keep all your loved meals in one shared list with your partner.</p>
+          <div id="demo" className="md:w-1/2 mt-12 md:mt-0">
+            <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg">
+              <video
+                src="/media/dishduo-demo.mp4"
+                controls
+                poster="/media/dishduo-demo-poster.jpg"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
-          <div>
-            <h3 className="font-semibold text-xl mb-2 text-indigo-800">Auto Shopping List</h3>
-            <p className="text-indigo-700">Get a smart grocery list with exactly what you need, no extras.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Demo Section */}
-      <section className="py-20 px-6 md:px-12 bg-white text-center max-w-5xl mx-auto">
-        <h2 className="text-3xl font-bold mb-6 text-gray-900">See it in action</h2>
-        <p className="text-gray-700 text-lg mb-8 max-w-3xl mx-auto">
-          Watch how DishDuo transforms your meal planning experience.
-        </p>
-        <div className="w-full max-w-4xl mx-auto aspect-video bg-black rounded-lg overflow-hidden shadow-lg">
-          <video
-            src="/media/dishduo-demo.mp4"
-            controls
-            className="w-full h-full object-cover"
-            poster="/media/dishduo-demo-poster.jpg"
-          >
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section className="py-20 px-6 md:px-12 bg-indigo-50 text-center max-w-5xl mx-auto">
-        <h2 className="text-3xl font-bold mb-6 text-indigo-700">Simple pricing for every duo</h2>
-        <p className="text-indigo-600 mb-12 max-w-3xl mx-auto">Start cooking smarter today.</p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
-          <div className="border border-indigo-300 rounded-xl bg-white p-8 flex flex-col items-center shadow-md">
-            <h3 className="text-2xl font-semibold mb-2 text-indigo-800">Free Taste</h3>
-            <p className="text-4xl font-bold mb-6 text-indigo-900">Free</p>
-            <ul className="text-indigo-700 mb-8 space-y-3 text-left w-full max-w-xs">
-              <li>✔ Swipe recipes</li>
-              <li>✔ Save favorites</li>
-              <li>✔ Auto shopping list</li>
-            </ul>
-            <button className="bg-indigo-700 text-white px-8 py-3 rounded-lg w-full hover:bg-indigo-800 transition">
-              Start Free
-            </button>
-          </div>
-          <div className="border border-indigo-300 rounded-xl bg-white p-8 flex flex-col items-center shadow-md">
-            <h3 className="text-2xl font-semibold mb-2 text-indigo-800">Pro Chef</h3>
-            <p className="text-4xl font-bold mb-6 text-indigo-900">£4/mo</p>
-            <ul className="text-indigo-700 mb-8 space-y-3 text-left w-full max-w-xs">
-              <li>✔ Everything in Free Taste</li>
-              <li>✔ Shared plans</li>
-              <li>✔ Recipe recommendations</li>
-              <li>✔ No ads</li>
-            </ul>
-            <button className="bg-indigo-700 text-white px-8 py-3 rounded-lg w-full hover:bg-indigo-800 transition">
-              Go Pro
-            </button>
-          </div>
-        </div>
-      </section>
+        </header>
+      </div>
 
       {/* Features Section */}
-      <section className="py-20 px-6 md:px-12 bg-white max-w-5xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-10 text-gray-900">Features</h2>
-        <div className="flex flex-col md:flex-row justify-center gap-16 max-w-5xl mx-auto">
-          <div className="max-w-xs">
-            <div className="mb-4 text-indigo-700 text-5xl">🍳</div>
-            <h3 className="text-xl font-semibold mb-2 text-indigo-800">Smart Recipes</h3>
-            <p className="text-gray-700">
-              AI-curated recipes tailored to your pantry and preferences.
-            </p>
-          </div>
-          <div className="max-w-xs">
-            <div className="mb-4 text-indigo-700 text-5xl">📅</div>
-            <h3 className="text-xl font-semibold mb-2 text-indigo-800">Meal Planning</h3>
-            <p className="text-gray-700">
-              Effortlessly plan meals together with your partner.
-            </p>
-          </div>
-          <div className="max-w-xs">
-            <div className="mb-4 text-indigo-700 text-5xl">🛒</div>
-            <h3 className="text-xl font-semibold mb-2 text-indigo-800">Smart Grocery Lists</h3>
-            <p className="text-gray-700">
-              Automatically generated shopping lists that minimize waste.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Us Section */}
-      <section className="py-20 px-6 md:px-12 bg-indigo-50 max-w-5xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-10 text-indigo-700">Why Choose DishDuo?</h2>
-        <div className="flex flex-col md:flex-row justify-center gap-16 max-w-5xl mx-auto">
-          <div className="max-w-xs">
-            <div className="mb-4 text-indigo-700 text-5xl">⏰</div>
-            <h3 className="text-xl font-semibold mb-2 text-indigo-800">Cook Smarter</h3>
-            <p className="text-indigo-700">
-              Save time with quick meal planning and AI-powered suggestions.
-            </p>
-          </div>
-          <div className="max-w-xs">
-            <div className="mb-4 text-indigo-700 text-5xl">♻️</div>
-            <h3 className="text-xl font-semibold mb-2 text-indigo-800">Reduce Food Waste</h3>
-            <p className="text-indigo-700">
-              Use what you have and avoid buying unnecessary ingredients.
-            </p>
-          </div>
-          <div className="max-w-xs">
-            <div className="mb-4 text-indigo-700 text-5xl">🤖</div>
-            <h3 className="text-xl font-semibold mb-2 text-indigo-800">Tailored for You</h3>
-            <p className="text-indigo-700">
-              Personalized meal plans that fit your tastes and dietary needs.
-            </p>
+      <section className="py-16 bg-white">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">Features You’ll Love</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+            <div className="p-6 border rounded-lg shadow-lg">
+              <img src="/assets/swipe.png" alt="Swipe to Plan" className="mx-auto h-12 mb-4" />
+              <h3 className="text-xl font-semibold mb-2">Swipe to Plan</h3>
+              <p className="text-gray-600">Quickly browse AI-curated recipes with simple swipes.</p>
+            </div>
+            <div className="p-6 border rounded-lg shadow-lg">
+              <img src="/assets/logo.png" alt="Save Favorites" className="mx-auto h-12 mb-4" />
+              <h3 className="text-xl font-semibold mb-2">Save Favorites</h3>
+              <p className="text-gray-600">Keep all your go-to recipes in one shared list.</p>
+            </div>
+            <div className="p-6 border rounded-lg shadow-lg">
+              <img src="/assets/shopping.png" alt="Auto Shopping List" className="mx-auto h-12 mb-4" />
+              <h3 className="text-xl font-semibold mb-2">Auto Shopping List</h3>
+              <p className="text-gray-600">Get a smart grocery list tailored to your picks.</p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 px-6 md:px-12 bg-white max-w-5xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-12 text-gray-900">What Our Users Say</h2>
-        <div className="max-w-3xl mx-auto space-y-8">
-          <div className="bg-indigo-50 p-8 rounded-lg shadow-md">
-            <p className="text-indigo-700 italic mb-4">
-              “DishDuo made cooking fun again and saved me hours every week!”
-            </p>
-            <p className="font-semibold text-indigo-900">Jamie, Busy Parent</p>
-          </div>
-          <div className="bg-indigo-50 p-8 rounded-lg shadow-md">
-            <p className="text-indigo-700 italic mb-4">
-              “Planning meals with DishDuo has brought me and my partner closer.”
-            </p>
-            <p className="font-semibold text-indigo-900">Morgan, Couple</p>
-          </div>
-          <div className="bg-indigo-50 p-8 rounded-lg shadow-md">
-            <p className="text-indigo-700 italic mb-4">
-              “The shopping list feature is a game-changer for our busy lifestyle.”
-            </p>
-            <p className="font-semibold text-indigo-900">Taylor, Professional Chef</p>
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto text-center max-w-4xl">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">What Our Users Say</h2>
+          <div className="relative overflow-hidden">
+            <div className="flex space-x-8 snap-x snap-mandatory overflow-x-auto scrollbar-hide">
+              <blockquote className="snap-center bg-white p-8 rounded-lg shadow-md flex-shrink-0 w-full sm:w-1/3">
+                <p className="text-gray-700 mb-4">"DishDuo transformed how my partner and I plan meals. Swiping through recipes is so fun and easy!"</p>
+                <footer className="text-sm font-semibold text-gray-900">– Jamie L.</footer>
+              </blockquote>
+              <blockquote className="snap-center bg-white p-8 rounded-lg shadow-md flex-shrink-0 w-full sm:w-1/3">
+                <p className="text-gray-700 mb-4">"The auto shopping list saves us so much time at the grocery store. Highly recommend!"</p>
+                <footer className="text-sm font-semibold text-gray-900">– Alex P.</footer>
+              </blockquote>
+              <blockquote className="snap-center bg-white p-8 rounded-lg shadow-md flex-shrink-0 w-full sm:w-1/3">
+                <p className="text-gray-700 mb-4">"Collaborative meal planning has never been this simple and enjoyable. Love DishDuo!"</p>
+                <footer className="text-sm font-semibold text-gray-900">– Morgan S.</footer>
+              </blockquote>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20 px-6 md:px-12 bg-indigo-50 max-w-5xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-12 text-indigo-700">Frequently Asked Questions</h2>
-        <div className="max-w-3xl mx-auto space-y-8 text-left">
-          <div>
-            <h4 className="font-semibold text-indigo-900 mb-2">Is DishDuo free to use?</h4>
-            <p className="text-indigo-800">
-              Yes! You can use the basic features for free, forever.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-indigo-900 mb-2">Can I use it solo?</h4>
-            <p className="text-indigo-800">
-              Absolutely! DishDuo works great for singles, but it shines when used with a partner.
-            </p>
-          </div>
-          <div>
-            <h4 className="font-semibold text-indigo-900 mb-2">Do I need to install anything?</h4>
-            <p className="text-indigo-800">
-              No installation needed. DishDuo is a web app accessible on any device.
-            </p>
-          </div>
+      {/* Waitlist Section */}
+      <section className="py-20 bg-white text-center">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Join the Waitlist</h2>
+          <p className="text-gray-700 mb-6">Be the first to cook smarter when we launch.</p>
+          {/* Simple email form */}
+          <form action="/api/signup" method="POST" className="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
+            <input
+              type="email" name="email" required
+              placeholder="Your email address"
+              className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+            />
+            <button
+              type="submit"
+              className="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-purple-700 transition"
+            >
+              Sign Up Now
+            </button>
+          </form>
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-20 px-6 md:px-12 bg-indigo-700 text-white text-center">
-        <h2 className="text-3xl font-bold mb-6">Ready to Cook Smarter?</h2>
-        <p className="mb-8 max-w-3xl mx-auto">
-          Join home cooks transforming their kitchens with DishDuo.
-        </p>
-        <Link href="/signup" className="bg-white text-indigo-700 px-10 py-4 text-lg rounded-xl font-semibold hover:bg-indigo-100 transition">
-          Get Started
-        </Link>
-      </section>
-    </div>
+      {/* Footer */}
+      <footer className="py-6 bg-gray-50">
+        <div className="container mx-auto text-center text-gray-500 text-sm">
+          &copy; {new Date().getFullYear()} DishDuo. All rights reserved.
+          <div className="mt-2">
+            <Link href="/privacy" className="mx-2 hover:underline text-gray-600">Privacy Policy</Link>
+            |
+            <Link href="/terms" className="mx-2 hover:underline text-gray-600">Terms of Service</Link>
+          </div>
+        </div>
+      </footer>
+    </>
   )
 }

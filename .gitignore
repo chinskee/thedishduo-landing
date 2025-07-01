@@ -1,2 +1,10 @@
 # dependencies
 node_modules/
+# macOS
+.DS_Store
+# Next.js build output
+.next/
+# Vercel build files
+out/
+# local env
+.env.local
