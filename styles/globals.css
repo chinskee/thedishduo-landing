@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #__next {
+    touch-action: auto;
+  }
+
+:root {
+  --color-primary: #6C5CE7;        /* Brand primary blue */
+  --color-accent: #00B894;         /* Secondary accent green */
+  --color-neutral-light: #F7F9FB;  /* Light background */
+  --color-neutral-dark: #2D3436;   /* Dark text */
+}
+
+/* Apply neutral background and text colors globally */
+body, #__next {
+  background-color: var(--color-neutral-light);
+  color: var(--color-neutral-dark);
+}
+
+/* Link styles using primary color */
+a {
+  color: var(--color-primary);
+}
+a:hover {
+  color: var(--color-accent);
+}
